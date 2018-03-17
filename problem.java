@@ -62,5 +62,7 @@ class problem{
         System.out.println("\n\nTotal de cidades visitadas: "+cont); 
         System.out.println("\nDistancia total percorrida: "+distancia_total + " km");
 
+        //Estou adicionando um comentario qq
+
     }
 }
