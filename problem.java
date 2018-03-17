@@ -7,7 +7,6 @@ class Destino{
         distancia = d; 
     }
 }
-
 class Vertice{
     Destino destinos[]; 
 
@@ -43,7 +42,25 @@ class problem{
         new Vertice(new Destino(15, 47)) };                      //Posição 14
 
     public static void main(String[] agrs){
+        
+        int distanciaAteProxVertice = 0; 
+        int indicedoVerticeDestino = 0; 
+        int distancia_total = 0; 
+        int i = 0, cont = 0; 
 
-          System.out.println(v[3].destinos[0].distancia);
+        System.out.println("Calculando a rota\n\n");
+
+        while(indicedoVerticeDestino != 15){
+            i = indicedoVerticeDestino; 
+            indicedoVerticeDestino = v[i].destinos[0].indiceProxVertice;
+            distanciaAteProxVertice = v[i].destinos[0].distancia; 
+            distancia_total += distanciaAteProxVertice;
+            System.out.println("Prox. vertice: " + (indicedoVerticeDestino + 1) + " Distancia: " + distanciaAteProxVertice + " km"); 
+            cont++; 
+        }
+
+        System.out.println("\n\nTotal de cidades visitadas: "+cont); 
+        System.out.println("\nDistancia total percorrida: "+distancia_total + " km");
+
     }
 }
